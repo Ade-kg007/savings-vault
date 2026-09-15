@@ -16,25 +16,25 @@ contract SavingsVaultTest is Test {
     }
 
     function test_Deposit() public {
-    vm.startPrank(user);
+        vm.startPrank(user);
 
-    savingsVault.deposit{value: 1 ether}();
+        savingsVault.deposit{value: 1 ether}();
 
-    assertEq(savingsVault.getBalance(), 1 ether);
+        assertEq(savingsVault.getBalance(), 1 ether);
 
-    vm.stopPrank();
-}
+        vm.stopPrank();
+    }
 
-function test_Withdraw() public {
-    vm.startPrank(user);
+    function test_Withdraw() public {
+        vm.startPrank(user);
 
-    savingsVault.deposit{value: 1 ether}();
-    savingsVault.withdraw(0.5 ether);
+        savingsVault.deposit{value: 1 ether}();
+        savingsVault.withdraw(0.5 ether);
 
-    assertEq(savingsVault.getBalance(), 0.5 ether);
+        assertEq(savingsVault.getBalance(), 0.5 ether);
 
-    vm.stopPrank();
-}
+        vm.stopPrank();
+    }
 
     function test_CannotWithdrawMoreThanBalance() public {
         vm.startPrank(user);

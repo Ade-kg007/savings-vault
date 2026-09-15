@@ -12,9 +12,8 @@ contract SavingsVault {
         require(balances[msg.sender] >= amount, "Insufficient balance");
 
         balances[msg.sender] -= amount;
-        (bool success, ) = msg.sender.call{value: amount}("");
+        (bool success,) = msg.sender.call{value: amount}("");
         require(success, "failed!");
-        
     }
 
     function getBalance() public view returns (uint256) {
