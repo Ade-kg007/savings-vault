@@ -1,66 +1,59 @@
-## Foundry
+# Simple Savings Vault
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A simple Ethereum smart contract built with Solidity and Foundry.
 
-Foundry consists of:
+## About
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+The Savings Vault allows users to deposit ETH into the contract and withdraw their own deposited funds.
 
-## Documentation
+Each user's balance is tracked separately using their wallet address.
 
-https://book.getfoundry.sh/
+## Features
 
-## Usage
+- Deposit ETH
+- Track individual user balances
+- Withdraw deposited ETH
+- Prevent users from withdrawing more than their balance
+- Tested with Foundry
 
-### Build
+## Project Structure
 
-```shell
-$ forge build
+```text
+src/
+└── SavingsVault.sol
+
+test/
+└── SavingsVault.t.sol
+
+script/
+└── SavingsVault.s.sol
 ```
 
-### Test
+## Getting Started
 
-```shell
-$ forge test
+Clone the repository and enter the project directory:
+
+```bash
+git clone https://github.com/Ade-kg007/simple-savings-vault.git
+cd simple-savings-vault
 ```
 
-### Format
+Build the project:
 
-```shell
-$ forge fmt
+```bash
+forge build
 ```
 
-### Gas Snapshots
+Run the tests:
 
-```shell
-$ forge snapshot
+```bash
+forge test
 ```
 
-### Anvil
+## Technologies
 
-```shell
-$ anvil
-```
+- Solidity
+- Foundry
+- Ethereum
 
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## Status
